@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oak & Stone — Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Distressed&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+/* ================================================================
+   OAK & STONE — "Coming Soon" landing page
+   ----------------------------------------------------------------
+   Same design system (colors, type, hero, feature strip) as the
+   main site template, trimmed down to a single page: no category
+   nav, no product tiles, no app teaser. Swap this out for the full
+   multi-page site once products are approved and published.
+   Search "EDIT:" for the spots you'll likely want to personalize.
+   ================================================================ */
+
+:root{
+  --ink:#0C0C0D;
+  --paper:#F5F4F0;
+  --paper-dim:#EAE8E1;
+  --stone:#A9A196;
+  --line-dark: rgba(245,244,240,0.14);
+  --line-light: rgba(12,12,13,0.12);
+  --text-dim: rgba(245,244,240,0.66);
+  --text-dim-dark: rgba(12,12,13,0.62);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Inter', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,.display{
+  font-family:'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.98;
+  font-weight: 400;
+}
+.brand-text{ font-family:'Rubik Distressed', 'Anton', sans-serif; }
+.mono{ font-family:'IBM Plex Mono', monospace; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+}
+
+/* ---------- Nav — logo only, no category links ---------- */
+.nav{
+  background: var(--ink);
+  border-bottom: 1px solid var(--line-dark);
+}
+.nav-inner{
+  max-width: 1200px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 16px 28px; gap: 20px;
+}
+.brand{ display:flex; align-items:center; }
+.brand-logo{ height:34px; width:auto; display:block; }
+/* EDIT: greyed-out placeholder — swap for a real <a class="nav-cta" href="...">
+   once your Amazon storefront is live, matching the working style below. */
+.nav-cta-disabled{
+  font-family:'IBM Plex Mono'; font-size:0.72rem; letter-spacing:0.06em;
+  text-transform:uppercase; color: var(--text-dim); background: rgba(245,244,240,0.08);
+  border: 1px dashed var(--line-dark); padding: 10px 16px; border-radius: 2px;
+  white-space:nowrap; cursor:not-allowed; user-select:none;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background: var(--ink); color: var(--paper);
+  padding: 100px 28px 90px;
+  position: relative; overflow:hidden;
+}
+/* EDIT: hero background photo — swap for your own photography */
+.hero-photo{
+  position:absolute; inset:0; z-index:0;
+  background-image: url("https://images.unsplash.com/photo-1511988617509-a57c8a288659?fm=jpg&q=80&w=2000&auto=format&fit=crop");
+  background-size: cover; background-position: center 35%;
+}
+.hero-scrim{
+  position:absolute; inset:0; z-index:1;
+  background: rgba(12,12,13,0.65);
+}
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:1;
+  background: radial-gradient(circle at 82% 18%, rgba(169,161,150,0.16), transparent 55%);
+  pointer-events:none;
+}
+.hero-inner{ max-width:1200px; margin:0 auto; position:relative; z-index:2; }
+.hero-watermark{
+  position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+  height:78%; width:auto; max-width:70%; object-fit:contain;
+  opacity:0.05; z-index:1; pointer-events:none;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono'; font-size:0.72rem; letter-spacing:0.14em;
+  text-transform:uppercase; color: var(--stone); margin-bottom:18px;
+}
+.hero h1{ font-size: clamp(2.6rem, 7vw, 5.2rem); max-width: 780px; }
+.hero p.lede{
+  margin-top:22px; max-width:460px; font-size:1.05rem;
+  color: var(--text-dim); line-height:1.55;
+}
+
+/* ---------- Feature strip ---------- */
+.feature-strip{
+  background: var(--paper); border-bottom:1px solid var(--line-light);
+  padding: 44px 28px;
+}
+.feature-strip-inner{
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns: repeat(6, 1fr); gap: 18px;
+}
+@media(max-width:900px){ .feature-strip-inner{ grid-template-columns: repeat(3,1fr); } }
+@media(max-width:520px){ .feature-strip-inner{ grid-template-columns: repeat(2,1fr); } }
+.feature-item{ text-align:center; }
+.feature-item svg{ width:26px; height:26px; margin:0 auto 10px; }
+.feature-item span{
+  display:block; font-family:'IBM Plex Mono'; font-size:0.66rem;
+  letter-spacing:0.05em; text-transform:uppercase; color: var(--text-dim-dark);
+}
+
+/* ---------- Under-construction message ---------- */
+.uc-section{ padding: 70px 28px 90px; }
+.uc-inner{ max-width:700px; margin:0 auto; text-align:center; }
+.uc-badge{
+  font-family:'IBM Plex Mono'; font-size:0.7rem; letter-spacing:.08em; text-transform:uppercase;
+  color: var(--ink); background: var(--stone); padding:6px 14px; border-radius:2px;
+  margin-bottom:22px; display:inline-block;
+}
+.uc-inner h2{ font-size: clamp(1.8rem,4vw,2.6rem); margin-bottom:18px; }
+.uc-inner p{ color: var(--text-dim-dark); font-size:1.02rem; line-height:1.65; }
+
+/* ---------- Footer ---------- */
+footer{ background: var(--ink); color: var(--text-dim); padding: 44px 28px; text-align:center; }
+footer img{ height:28px; width:auto; margin:0 auto 14px; }
+footer p{ font-size:0.85rem; max-width:320px; margin:0 auto; }
+footer .footer-bottom{
+  margin-top:26px; padding-top:20px; border-top:1px solid var(--line-dark);
+  font-family:'IBM Plex Mono'; font-size:0.68rem; letter-spacing:.04em; color: rgba(245,244,240,0.4);
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <img class="brand-logo" src="./images/oak-stone-wordmark-white.png" alt="Oak & Stone">
+    </div>
+    <!-- EDIT: this stays a plain, non-clickable placeholder until the
+         Amazon storefront is live — see the CSS comment above for how
+         to turn it back into a real link. -->
+    <span class="nav-cta-disabled">Shop on Amazon</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-scrim"></div>
+  <img class="hero-watermark" src="./images/oak-stone-mark-v1.png" alt="" aria-hidden="true">
+  <div class="hero-inner">
+    <div class="eyebrow">Premium essentials · Honest prices</div>
+    <h1>Built for comfort.<br>Designed for freedom.</h1>
+    <!-- EDIT: hero copy -->
+    <p class="lede">Oak & Stone makes everyday clothing for people who don't want to choose between comfort and price. Soft, durable, built to last — priced like it should be. Proudly veteran owned and operated.</p>
+  </div>
+</div>
+
+<div class="feature-strip">
+  <div class="feature-strip-inner">
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0D" stroke-width="1.4"><path d="M12 2c3 4 6 8 6 12a6 6 0 1 1-12 0c0-4 3-8 6-12z"/></svg>
+      <span>Soft-Touch Fabric</span>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0D" stroke-width="1.4"><path d="M4 15c2-4 4-6 8-6s6 2 8 6M4 19c2-3 4-4 8-4s6 1 8 4"/></svg>
+      <span>Easy Care</span>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0D" stroke-width="1.4"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>
+      <span>Stretch Comfort</span>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0D" stroke-width="1.4"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16" stroke-dasharray="2 3"/></svg>
+      <span>Breathable</span>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0D" stroke-width="1.4"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
+      <span>Comfort Fit</span>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0D" stroke-width="1.4"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      <span>Built to Last</span>
+    </div>
+  </div>
+</div>
+
+<div class="uc-section">
+  <div class="uc-inner">
+    <div class="uc-badge">Under Construction</div>
+    <!-- EDIT: under-construction message -->
+    <h2>We're Just Getting Started.</h2>
+    <p>This site is currently under construction. Full store functionality — browsing, shopping, and checkout — will go live once our products have been approved and published. Thanks for stopping by, and check back soon.</p>
+  </div>
+</div>
+
+<footer>
+  <img src="./images/oak-stone-wordmark-white.png" alt="Oak & Stone">
+  <p>Built for comfort. Designed for freedom. Proudly veteran owned & operated.</p>
+  <div class="footer-bottom">© <span id="year"></span> Oak &amp; Stone. All rights reserved.</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

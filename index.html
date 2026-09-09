@@ -38,10 +38,16 @@ h1,h2,.display{
   line-height: 0.98;
   font-weight: 400;
 }
-.brand-text{ font-family:'Rubik Distressed', 'Anton', sans-serif; }
+/* EDIT: grunge/distressed look — (Rubik Distressed)
+   Scoped to just the brand wordmark ("OAK" / "STONE") in the
+   nav and hero. */
+.brand-text{
+  font-family:'Rubik Distressed', 'Anton', sans-serif;
+}
 .mono{ font-family:'IBM Plex Mono', monospace; }
 a{ color:inherit; text-decoration:none; }
 img{ max-width:100%; display:block; }
+button{ font-family:inherit; }
 
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
@@ -150,9 +156,6 @@ footer .footer-bottom{
     <button class="brand" data-page="home" aria-label="Oak & Stone — go to homepage" type="button">
       <img class="brand-logo" src="./oak-stone-wordmark-white.png" alt="Oak & Stone">
     </button>
-    <div class="brand">
-      <img class="brand-logo" src="./oak-stone-wordmark-white.png" alt="Oak & Stone">
-    </div>
     <span class="nav-cta-disabled">Shop on Amazon</span>
   </div>
 </nav>

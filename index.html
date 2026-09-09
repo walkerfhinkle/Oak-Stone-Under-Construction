@@ -10,13 +10,7 @@
 
 /* ================================================================
    OAK & STONE — "Coming Soon" landing page
-   ----------------------------------------------------------------
-   Same design system (colors, type, hero, feature strip) as the
-   main site template, trimmed down to a single page: no category
-   nav, no product tiles, no app teaser. Swap this out for the full
-   multi-page site once products are approved and published.
-   Search "EDIT:" for the spots you'll likely want to personalize.
-   ================================================================ */
+*/
 
 :root{
   --ink:#0C0C0D;
@@ -66,8 +60,6 @@ img{ max-width:100%; display:block; }
 }
 .brand{ display:flex; align-items:center; }
 .brand-logo{ height:34px; width:auto; display:block; }
-/* EDIT: greyed-out placeholder — swap for a real <a class="nav-cta" href="...">
-   once your Amazon storefront is live, matching the working style below. */
 .nav-cta-disabled{
   font-family:'IBM Plex Mono'; font-size:0.72rem; letter-spacing:0.06em;
   text-transform:uppercase; color: var(--text-dim); background: rgba(245,244,240,0.08);
@@ -81,7 +73,7 @@ img{ max-width:100%; display:block; }
   padding: 100px 28px 90px;
   position: relative; overflow:hidden;
 }
-/* EDIT: hero background photo — swap for your own photography */
+/* EDIT: hero background photo */
 .hero-photo{
   position:absolute; inset:0; z-index:0;
   background-image: url("https://images.unsplash.com/photo-1511988617509-a57c8a288659?fm=jpg&q=80&w=2000&auto=format&fit=crop");
@@ -158,9 +150,6 @@ footer .footer-bottom{
     <div class="brand">
       <img class="brand-logo" src="./images/oak-stone-wordmark-white.png" alt="Oak & Stone">
     </div>
-    <!-- EDIT: this stays a plain, non-clickable placeholder until the
-         Amazon storefront is live — see the CSS comment above for how
-         to turn it back into a real link. -->
     <span class="nav-cta-disabled">Shop on Amazon</span>
   </div>
 </nav>
